@@ -7,8 +7,13 @@ config/*
 config/rclone/*
 !config/rclone/.gitkeep
 
-# Private environment file
+# Private and combined environment files
+private.env
 .env
 
 # Running server files
 media-server
+
+# Extra build scripts
+radarr/post-build.sh
+sonarr/post-build.sh

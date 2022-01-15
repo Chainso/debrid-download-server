@@ -5,45 +5,44 @@ A download server to downloader files from trackers using a debrid service.
 <br />
 
 ## Contents
-- [Installation](#installation)
+- [Setup](#setup)
     - [Requirements](#requirements)
     - [Environment](#environment)
-        - [Before Setup](#before-setup)
-        - [After Setup](#after-setup)
-    - [Setup](#setup)
+        - [Public Variables](#public-variables)
+        - [Private Variables](#private-variables)
+    - [Installation](#installation)
 
 <br />
 
-## Installation
+## Setup
 
 ### Requirements
 
 | Software | Version |
 |:-|:-:|
-| Docker | 3.3+ |
-| rclone | 1.5x |
+| Docker | 20.x+ |
+| rclone | 1.5x+ |
 
 <br />
 
 ### Environment
 
-#### Before Setup
+#### Public Variables
 
-Before setting up, in the `config/rclone` folder, add your `rclone.conf`.
-
-<br />
-
-#### After Setup
-After setting up, you need to add a `.env` file, and add the following values. Aftering adding the `.env` file, run `docker-compose up -d --build`.
-
-| Name | Description |
-|:-|:-:|
-| SONARR_API_KEY | The API key for Sonarr. This can be found in Sonarr at Settings/General.
-| RADARR_API_KEY | The API key for Radarr. This can be found in Radarr at Settings/General.
+Feel free to change the values in `public.env` if you wish to do so. If you are using rclone to back up your downloads to another server, in the `config/rclone` folder, add your `rclone.conf`.
 
 <br />
 
-### Setup
+#### Private Variables
 
-1. Run `git clone https://github.com/Chainso/debrid-download-server && cd debrid-download-server`
-2. Run `docker-compose up -d`
+Any private variables that you want to use should be in `private.env`. They will be passed into the docker container.
+
+<br />
+
+### Installation
+
+1. Run `run.sh`
+
+<br />
+
+You can run a post-build script for Sonarr and Radarr by adding commands changing the environment variables `SONARR_EXTRA_BUILD_FILE` and `RADARR_EXTRA_BUILD_FILE` to point to your build scripts. These will be called in the Dockerfiles.
