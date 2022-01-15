@@ -3,9 +3,13 @@ rdt-client
 
 # Ignore config aside from the rclone folder
 config/*
-!config/rclone
 config/rclone/*
 !config/rclone/.gitkeep
+
+# Custom scripts
+scripts/*
+scripts/**/*
+!scripts/**/.gitkeep
 
 # Private and combined environment files
 private.env
