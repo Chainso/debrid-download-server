@@ -3,13 +3,18 @@ rdt-client
 
 # Ignore config aside from the rclone folder
 config/*
+!config/rclone
 config/rclone/*
 !config/rclone/.gitkeep
 
 # Custom scripts
 scripts/*
-scripts/**/*
-!scripts/**/.gitkeep
+!scripts/radarr
+scripts/radarr/*
+!scripts/radarr/.gitkeep
+!scripts/sonarr
+scripts/sonarr/*
+!scripts/sonarr/.gitkeep
 
 # Private and combined environment files
 private.env
@@ -20,4 +25,4 @@ media-server
 
 # Extra build scripts
 radarr/post-build.sh
-sonarr/post-build.sh
+radarr/post-build.sh
