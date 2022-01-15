@@ -1,0 +1,1 @@
+curl -d '{name: "ImportListSync"}' -H "Content-Type: application/json" -X POST http://sonarr:8989/api/v3/command/?apikey=YOURAPIKEY

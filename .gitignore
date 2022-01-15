@@ -1,0 +1,14 @@
+# RDT Client from Docker download
+rdt-client
+
+# Ignore config aside from the rclone folder
+config/*
+!config/rclone
+config/rclone/*
+!config/rclone/.gitkeep
+
+# Private environment file
+.env
+
+# Running server files
+media-server
