@@ -27,17 +27,17 @@ A download server to downloader files from trackers using a debrid service.
 
 ### Environment
 
-#### Default Ports
+#### Services
 
 The default ports for each services are in the table below.
 
 | Service | Port |
 |:-|:-:|
-| Sonarr | 8989 |
-| Radarr | 7878 |
-| Jackett | 9117 |
-| RDT Client | 6500 |
-| Plex | 32400 |
+| [Sonarr](https://sonarr.tv/) | 8989 |
+| [Radarr](https://radarr.video/) | 7878 |
+| [Jackett](https://github.com/Jackett/Jackett) | 9117 |
+| [RDT Client](https://github.com/rogerfar/rdt-client) | 6500 |
+| [Plex](https://www.plex.tv/en-ca/) | 32400 |
 
 <br />
 
