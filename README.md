@@ -27,6 +27,20 @@ A download server to downloader files from trackers using a debrid service.
 
 ### Environment
 
+#### Default Ports
+
+The default ports for each services are in the table below.
+
+| Service | Port |
+|:-|:-:|
+| Sonarr | 8989 |
+| Radarr | 7878 |
+| Jackett | 9117 |
+| RDT Client | 6500 |
+| Plex | 32400 |
+
+<br />
+
 #### Public Variables
 
 Feel free to change the values in `public.env` if you wish to do so. If you are using rclone to back up your downloads to another server, in the `config/rclone` folder, add your `rclone.conf`.
