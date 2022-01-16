@@ -5,6 +5,7 @@ FROM linuxserver/radarr as radarr
 RUN apt-get update -y
 RUN apt-get install unzip -y
 RUN apt-get install cron -y
+RUN apt-get install vim -y
 
 RUN command -v rclone >/dev/null || curl https://rclone.org/install.sh | bash
 
