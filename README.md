@@ -21,7 +21,6 @@ A download server to downloader files from trackers using a debrid service.
 | Software | Version |
 |:-|:-:|
 | Docker | 20.x+ |
-| rclone | 1.5x+ |
 
 <br />
 
