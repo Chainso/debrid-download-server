@@ -1,4 +1,4 @@
-ARG USE_SONARR_EXTRA_BUILD_FILE
+ARG USE_RADARR_EXTRA_BUILD_FILE
 
 FROM linuxserver/radarr as radarr
 
