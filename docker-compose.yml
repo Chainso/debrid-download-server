@@ -73,16 +73,28 @@ services:
     restart: unless-stopped
 
   rdtclient:
-      image: rogerfar/rdtclient
-      container_name: rdtclient
-      volumes:
-          - "${MEDIA_SERVER_PATH}/downloads:/data/downloads"
-          - "${MEDIA_SERVER_PATH}/db:/data/db"
-      env_file: .env
-      restart: always
-      logging:
-          driver: json-file
-          options:
-              max-size: 10m
-      ports:
-          - ${RDTCLIENT_PORT}:${RDTCLIENT_PORT}
+    image: rogerfar/rdtclient
+    container_name: rdtclient
+    volumes:
+        - "${MEDIA_SERVER_PATH}/downloads:/data/downloads"
+        - "${MEDIA_SERVER_PATH}/db:/data/db"
+    env_file: .env
+    restart: always
+    logging:
+        driver: json-file
+        options:
+            max-size: 10m
+    ports:
+        - ${RDTCLIENT_PORT}:${RDTCLIENT_PORT}
+    
+  readarr:
+    image: lscr.io/linuxserver/readarr:develop
+    container_name: readarr
+    volumes:
+      - "./config/readarr:/config"
+      - "${MEDIA_SERVER_PATH}/media/books:/books"
+      - "${MEDIA_SERVER_PATH}/downloads/readarr:/downloads"
+    env_file: .env
+    ports:
+      - ${READARR_PORT}:${READARR_PORT}
+    restart: unless-stopped
