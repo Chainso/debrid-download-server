@@ -60,6 +60,24 @@ services:
         - jackett
     restart: unless-stopped
 
+  readarr:
+    build:
+        context: ./readarr
+        args:
+            USE_RADARR_EXTRA_BUILD_FILE: ${USE_READARR_EXTRA_BUILD_FILE}
+            RADARR_EXTRA_BUILD_FILE: ${READARR_EXTRA_BUILD_FILE}
+    image: linuxserver/readarr:develop
+    container_name: readarr
+    volumes:
+      - "./config/readarr:/config"
+      - "./config/rclone:/config/rclone"
+      - "${MEDIA_SERVER_PATH}:/media-server"
+      - "./scripts/radarr:/scripts"
+    env_file: .env
+    ports:
+      - ${READARR_PORT}:${READARR_PORT}
+    restart: unless-stopped
+
   plex:
     image: linuxserver/plex
     container_name: plex
@@ -86,15 +104,3 @@ services:
             max-size: 10m
     ports:
         - ${RDTCLIENT_PORT}:${RDTCLIENT_PORT}
-    
-  readarr:
-    image: lscr.io/linuxserver/readarr:develop
-    container_name: readarr
-    volumes:
-      - "./config/readarr:/config"
-      - "${MEDIA_SERVER_PATH}/media/books:/books"
-      - "${MEDIA_SERVER_PATH}/downloads/readarr:/downloads"
-    env_file: .env
-    ports:
-      - ${READARR_PORT}:${READARR_PORT}
-    restart: unless-stopped

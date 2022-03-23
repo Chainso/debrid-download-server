@@ -34,10 +34,10 @@ The default ports for each services are in the table below.
 |:-|:-:|
 | [Sonarr](https://sonarr.tv/) | 8989 |
 | [Radarr](https://radarr.video/) | 7878 |
+| [Readarr](https://readarr.com/) | 8787 |
 | [Jackett](https://github.com/Jackett/Jackett) | 9117 |
 | [RDT Client](https://github.com/rogerfar/rdt-client) | 6500 |
 | [Plex](https://www.plex.tv/en-ca/) | 32400 |
-| [Readarr](https://readarr.com/) | 6767 |
 
 <br />
 

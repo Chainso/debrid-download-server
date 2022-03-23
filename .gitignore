@@ -26,3 +26,4 @@ media-server
 # Extra build scripts
 radarr/post-build.sh
 sonarr/post-build.sh
+readarr/post-build.sh
