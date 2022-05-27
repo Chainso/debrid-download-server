@@ -97,7 +97,7 @@ services:
         - "${MEDIA_SERVER_PATH}/downloads:/data/downloads"
         - "${MEDIA_SERVER_PATH}/db:/data/db"
     env_file: .env
-    restart: always
+    restart: unless-stopped
     logging:
         driver: json-file
         options:
