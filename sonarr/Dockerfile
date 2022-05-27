@@ -1,6 +1,8 @@
 ARG USE_SONARR_EXTRA_BUILD_FILE
 
 FROM linuxserver/sonarr as sonarr
+
+RUN apt-get install unzip -y
 RUN command -v rclone >/dev/null || curl https://rclone.org/install.sh | bash
 RUN apt-get install -y cron
 RUN apt-get install vim -y
