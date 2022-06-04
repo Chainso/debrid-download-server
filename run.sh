@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # Create .env from public and private.env
 public_env_file=public.env
 private_env_file=private.env
