@@ -88,6 +88,8 @@ services:
     env_file: .env
     ports:
         - ${PLEX_PORT}:${PLEX_PORT}
+        - ${WEBTOOLS_HTTP_PORT}:${WEBTOOLS_HTTP_PORT}
+        - ${WEBTOOLS_HTTPS_PORT}:${WEBTOOLS_HTTPS_PORT}
     restart: unless-stopped
 
   rdtclient:
